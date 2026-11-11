@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CS.Identity.API/CS.Identity.API.csproj" />
+    <Project Path="src/CS.Identity.Application/CS.Identity.Application.csproj" />
+    <Project Path="src/CS.Identity.Domain/CS.Identity.Domain.csproj" />
+    <Project Path="src/CS.Identity.Infrastructure/CS.Identity.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CS.Identity.Domain.Tests/CS.Identity.Domain.Tests.csproj" />
+  </Folder>
+</Solution>

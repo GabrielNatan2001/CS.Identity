@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cs-identity-api
+  labels:
+    app: cs-identity-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cs-identity-api
+  template:
+    metadata:
+      labels:
+        app: cs-identity-api
+    spec:
+      containers:
+        - name: cs-identity-api
+          image: gabrielnatan2001/cs-identity-api:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: cs-identity-config
+            - secretRef:
+                name: cs-identity-secret
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 20
