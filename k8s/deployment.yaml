@@ -17,6 +17,7 @@ spec:
       containers:
         - name: cs-identity-api
           image: gabrielnatan2001/cs-identity-api:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           envFrom:
